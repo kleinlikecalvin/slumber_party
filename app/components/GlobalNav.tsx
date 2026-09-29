@@ -6,9 +6,9 @@ type NavData = {
 export default function GlobalNav() {
   const navData: NavData[] = [
     { path: "/", display: "home" },
-    { path: "#new", display: "new video" },
+    { path: "#library", display: "library" },
     { path: "#socials", display: "socials" },
-    { path: "#about", display: "meet morty" },
+    { path: "#about", display: "who is morty?" },
   ];
 
   return (
