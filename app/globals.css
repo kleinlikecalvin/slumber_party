@@ -19,6 +19,9 @@
   --font-headers: var(--font-tilt-warp);
   --font-sans: var(--font-ibm-sans);
   --default-font-family: Arial, Helvetica, sans-serif;
+
+  /* STYLING */
+  --radius-container: 45px;
 }
 
 body {

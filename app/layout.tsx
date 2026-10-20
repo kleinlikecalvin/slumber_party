@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Tilt_Warp } from "next/font/google";
 import "./globals.css";
-import GlobalNav from "./components/GlobalNav";
+import GlobalNav from "./components/Global/GlobalNav";
+import GlobalFooter from "./components/Global/GlobalFooter";
 
 const ibmSans = IBM_Plex_Sans({ weight: "400", variable: "--font-ibm-sans" });
 const tiltWarp = Tilt_Warp({
@@ -21,11 +22,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${ibmSans.variable} ${tiltWarp.variable} h-full antialiased`}
     >
       <body>
-        <p className="font-headers tracking-[2px] text-9xl p-10 lg:text-center">
+        <p className="font-headers tracking-[2px] text-9xl m-10 lg:text-center">
           LET'S PARTY!
         </p>
         <GlobalNav />
         {children}
+        <GlobalFooter />
       </body>
     </html>
   );
