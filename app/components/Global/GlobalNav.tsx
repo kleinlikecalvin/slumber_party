@@ -1,9 +1,15 @@
+import { cn } from "cn";
+
 type NavData = {
   path: string;
   display: string;
 };
 
-export default function GlobalNav() {
+type NavProps = {
+  usage?: string;
+};
+
+export default function GlobalNav({ usage }: NavProps) {
   const navData: NavData[] = [
     { path: "/", display: "home" },
     { path: "#library", display: "library" },
@@ -12,8 +18,13 @@ export default function GlobalNav() {
   ];
 
   return (
-    <nav className="GlobalNav p-5 sticky top-0 left-0">
-      <ul className="flex sm:text-sm gap-7 justify-center md:gap-40">
+    <nav className="GlobalNav sticky top-0 left-0">
+      <ul
+        className={cn("flex text-sm gap-7 justify-center md:gap-40 p-5", {
+          "flex-col md:gap-10 text-lg max-lg:text-center p-0":
+            usage === "footer",
+        })}
+      >
         {navData.map((link, i) => {
           const { path, display } = link;
 
